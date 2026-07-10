@@ -19,3 +19,26 @@ function App() {
 export default App;
 
 "" using react and js , use state ""
+
+# not to increment after 100
+
+import { useState } from "react";
+
+function App() {
+  const [count, setCount] = useState(90);
+
+  return (
+    <div>
+      <h1>{count}</h1>
+
+      <button onClick={() => { {setCount(count - 1);}}}>-</button>
+      <button onClick={() => {if (count < 100) {setCount(count + 1);}}}>+</button>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
