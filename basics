@@ -1,0 +1,456 @@
+
+UTF-8 = Unicode Transformation Format (8-bit)
+It is a character encoding standard used to display:
+* All languages
+* Emojis
+* Symbols
+In HTML, we write:
+
+<meta charset="UTF-8">
+This ensures your webpage displays all characters correctly.
+
+
+content="width=device-width, initial-scale=1.0 is part of the viewport meta tag.
+✔ What it does?
+* width=device-width → Makes the webpage match the device’s screen width
+* initial-scale=1.0 → Sets the default zoom level
+✔ Why needed?
+For responsive design (mobile-friendly websites)
+Without this, websites look:
+* Zoomed out
+* Too small
+* Non-responsive
+
+****************************************************************************************************************************
+
+BASIC OVERVIEW OF HTML CSS AND JS:
+HTML → Structure
+CSS → Styling
+JavaScript → Interactivity
+
+****************************************************************************************************************************
+
+- [ ] HTML 
+HTML (HyperText Markup Language) 
+is the standard language used to create and structure web pages. It tells the browser what content to display and how it is organized (text, images, links, forms, etc.).
+
+HTML is not a programming language — it is a markup language.
+HTML is not a programming language because it cannot perform logic or calculations.
+   A programming language can:
+* Make decisions (if–else)
+* Perform calculations
+* Use loops
+* Manipulate data dynamically
+HTML cannot do any of these. It only describes what content should appear on a web page.
+
+HTML is a markup language because it uses tags to mark up content.
+These tags tell the browser:
+* What type of content it is
+* How it should be displayed or structured
+
+
+Structure of an HTML Document
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Web Page</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p>This is my first HTML page.</p>
+</body>
+</html>
+Explanation of Tags
+* <!DOCTYPE html> → Declares that the document uses HTML5
+* <html> → Root element that contains the entire HTML document
+* <head> → Contains metadata such as title, styles, links, and scripts (This content is not visible on the web page)
+* <title> → Displays the page title on the browser tab
+* <body> → Contains all the visible content of the web page (text, images, links, forms, etc.)
+
+HTML Attributes
+
+Attributes give extra information to elements.
+FOR EXAMPLE:
+
+<img src="photo.jpg" alt="My Photo" width="200">
+* src → Image path
+* alt → Alternative text
+* width → Image size
+
+Lists in HTML
+                           Ordered List.  
+                                     Used when the order of items is important.
+
+                           Unordered List
+                                     Used when the order of items is not important.
+
+ 
+Forms in HTML
+HTML Forms are used to collect user input, such as:
+* Name
+* Email
+* Password
+* Feedback
+Forms are commonly used in:
+* Login pages
+* Registration forms
+* Contact forms
+
+****************************************************************************************************************************
+css
+Top ui - https://materializecss.com , https://tailwindcss.com ,
+
+
+CSS (Cascading Style Sheets) It is used to style and design web pages + selection .
+CSS controls how HTML elements look, such as:
+* Colors
+* Fonts
+* Sizes
+* Spacing
+* Layout
+* Positioning
+* Animations
+
+👉 While HTML creates the structure of a web page, CSS makes the page attractive and visually appealing.
+
+Why CSS is Used
+Without CSS, a web page looks plain and unstyled.
+CSS allows developers to:
+* Change text color and size
+* Add background colors and images
+* Create layouts (rows, columns)
+* Make responsive designs for different devices
+* Improve user experience
+
+Types of CSS:
+Inline CSS
+Applied directly inside an HTML element.
+
+<p style="color: red;">Hello World</p>
+Used for small or quick changes.
+
+Internal CSS
+Written inside the <style> tag in the <head> section.
+
+<head>
+  <style>
+    p {
+      color: blue;
+    }
+  </style>
+</head>
+Used for styling a single web page.
+
+ External CSS
+Written in a separate .css file and linked to HTML.
+
+<link rel="stylesheet" href="style.css">
+
+p {
+  color: green;
+}
+ Best and most recommended method.
+
+CSS Syntax
+
+selector {
+  property: value;
+}
+ Example:
+
+h1 {
+  color: red;
+  font-size: 30px;
+}
+* h1 → Selector
+* color → Property
+* red → Value
+
+
+CSS Box Model 
+In CSS, every HTML element is treated as a rectangular box. This box model helps control spacing, size, and layout of elements on a web page.
+The CSS Box Model consists of four parts, arranged from inside to outside:
+
+Content
+* This is the actual content of the element.
+* It can be text, image, video, etc.
+* The width and height of an element apply to the content area.
+Example:
+
+width: 200px;
+height: 100px;
+
+ Padding
+* Space between the content and the border
+* Padding increases the inside space of the element
+* Background color applies to padding area
+ Example:
+
+padding: 10px;
+Meaning: 10px space is added inside the box around the content.
+
+Border
+* Surrounds the content and padding
+* Can be solid, dotted, dashed, etc.
+* Border thickness adds to the total size of the element
+ Example:
+
+border: 2px solid black;
+
+Margin
+* Space outside the border
+* Creates distance between two elements
+* Margin is always transparent
+ Example:
+
+margin: 15px;
+
+🔁 Order of Box Model (Inside → Outside)
+
+Content → Padding → Border → Margin
+
+Flexbox & Grid in CSS
+Flexbox and Grid are CSS layout systems used to arrange and align elements on a web page easily and efficiently.
+They help in creating:
+* Responsive layouts
+* Proper alignment
+* Clean page structure
+
+****************************************************************************************************************************
+
+- [ ] JavaScript (JS) 
+JavaScript is a high-level, case sensitive , platform independent ,interpreted programming language used to make web pages interactive and dynamic.
+While HTML creates the structure of a web page and CSS styles it, JavaScript adds behavior and functionality.
+- Behavior means how a web page reacts to user actions.
+- Functionality means what tasks or operations the website can perform.
+
+Why JavaScript is Used
+JavaScript allows web pages to:
+* Respond to user actions (click, scroll, input)
+* Perform logic and calculations
+* Validate forms
+* Update content without reloading the page
+* Create interactive features like sliders, pop-ups, and animations
+
+****************************************************************************************************************************
+
+- [ ] Frontend 
+Frontend (Client-Side Development)
+Definition:
+Frontend is the part of a website or web application that users see and interact with directly. It is built using HTML, CSS, and JavaScript, along with frameworks and libraries.
+Purpose:
+* Display content to users
+* Make the website visually appealing
+* Handle user interactions
+* Provide a smooth user experience (UX)
+
+What Frontend Developers Do:
+* Create responsive pages (work on mobile, tablet, desktop)
+* Add animations and transitions
+* Handle form validation (login/signup)
+* Fetch and display data from APIs
+* Ensure accessibility and SEO
+
+(SEO is the process of optimizing a website so that it appears higher in search engine results (like Google, Bing) for relevant keywords.)
+
+***************************************************************************************************************************
+
+Backend
+Backend (Server-Side Development)
+Definition:
+Backend is the part of a web application that runs on the server and handles data processing, storage, security, and business logic. It works behind the scenes and is not directly visible to users.
+
+Purpose:
+* Store and manage data (databases)
+* Authenticate users (login/signup)
+* Handle business logic (calculations, workflows)
+* Communicate with frontend via APIs
+* Ensure security and permissions
+
+What Backend Developers Do:
+* Create APIs for frontend to fetch or send data
+* Connect websites to databases
+* Validate and process user input securely
+* Implement authentication and authorization
+* Handle file uploads, payments, notifications
+
+Example:
+In Amazon:
+* User adds items to the cart → Backend updates the cart in the database
+* User places an order → Backend processes payment, updates inventory
+* Order confirmation → Backend sends data to frontend
+ 
+***************************************************************************************************************************
+
+deployment
+Definition:
+Deployment is the process of publishing a website or web application to a server so that it becomes live on the internet and accessible to users.
+
+Purpose of Deployment:
+* Make the app accessible 24/7
+* Store data on cloud servers
+* Allow real users to use your application
+
+What Happens During Deployment?
+1. You upload your frontend (HTML/CSS/JS/React) to a hosting service.
+2. You upload your backend (Node.js/Python/Java) to a server.
+3. You connect your backend to a database.
+4. You get a live URL or domain like: https://yourwebsite.com
+
+Deployment Platforms:
+Frontend Hosting
+* Vercel
+* Netlify
+* GitHub Pages
+Backend Hosting
+* Render
+* Railway
+* AWS
+* Azure
+* Google Cloud
+Database Hosting
+* MongoDB Atlas
+* MySQL on AWS RDS
+* Supabase
+
+***************************************************************************************************************************
+
+Database 
+
+A database is an organized collection of data that is stored, managed, and accessed electronically.
+It allows storing information in a structured way so it can be easily retrieved, updated, and managed.
+
+Purpose of a Database:
+* Store data permanently
+* Organize data efficiently
+* Allow fast retrieval (search)
+* Support updates and deletion
+* Ensure data security and integrity
+
+Types of Databases:
+SQL (Relational Databases)
+* Data stored in tables (rows & columns)
+* Uses SQL language
+* Structured and follows rules
+Examples:
+* MySQL
+* PostgreSQL
+* Oracle
+* SQL Server
+
+NoSQL (Non-Relational Databases)
+* Data stored in documents, key-value pairs, or collections
+* Flexible and scalable
+* Best for large, real-time apps
+Examples:
+* MongoDB
+* Firebase
+* Cassandra
+* DynamoDB
+
+Where Databases Are Used?
+* Login/signup systems
+* E-commerce (products, orders)
+* Social media (posts, chats, profiles)
+* Banking (transactions, customer details)
+* Any application that needs to store and retrieve data
+
+***************************************************************************************************************************
+
+API
+
+API (Application Programming Interface)
+An API is a software interface that allows two applications or systems to communicate with each other. It defines how data can be requested, processed, and returned.
+
+API is like a messenger between frontend and backend. It takes requests → gets the data → sends back a response.
+
+Purpose of API:
+* Connect frontend to backend
+* Allow apps to exchange data
+* Make communication between systems simple and secure
+* Enable features like login, payments, fetching data, etc.
+
+***************************************************************************************************************************
+IP
+
+IP (Internet Protocol)
+IP is a networking protocol that defines how data packets travel from one device to another across a network using unique IP addresses.
+Key Points
+* Every device on a network has a unique IP address (like a home address).
+* IP breaks data into small packets and sends them across the network.
+* IP ensures packets reach the correct destination device.
+* Works together with TCP (Transmission Control Protocol) as TCP/IP.
+ 
+Types of IP Addresses
+1. IPv4
+* 32-bit
+* Example: 192.168.1.1
+* Most commonly used.
+2. IPv6
+* 128-bit (designed to replace IPv4)
+* Example: 2401:4900:4c7c:0000::
+
+Static vs Dynamic IP
+Static IP
+* Doesn’t change
+* Used by servers
+Dynamic IP
+* Changes automatically
+* Provided by ISP for normal users
+
+Public vs Private IP
+Public IP
+* Provided by ISP
+* Used to communicate on the internet
+Private IP
+* Used inside local networks
+* Example: 192.168.x.x, 10.x.x.x
+
+***************************************************************************************************************************
+ 
+DOM
+DOM (Document Object Model)
+
+DOM is a programming interface for web pages that represents the HTML document as a structured tree of objects, allowing JavaScript to access, read, and modify the content, style, and structure of the webpage.
+
+DOM = HTML converted into a Tree Structure             JavaScript uses this tree to change the webpage dynamically.
+
+- [ ] Why DOM is Important in Frontend? 
+Because without DOM, JavaScript cannot interact with the webpage.
+Example interactions:
+* Form validation
+* Opening/closing menus
+* Changing themes
+* Adding items to cart
+* Showing popups
+
+DOM = Bridge between HTML and JavaScript
+HTML → Browser → DOM → JavaScript
+
+
+***************************************************************************************************************************
+Gateway
+
+Gateway (Network Gateway)
+
+A gateway is a network device that connects two different networks and allows data to flow between them, even if those networks use different protocols.
+->A Gateway is like a bridge that lets one network talk to another network.
+
+Why is it called a Gateway?
+Because it acts as the entry and exit gate for your network. All data leaving your network or entering it goes through the gateway.
+
+Key Functions of a Gateway
+* Connects two different networks
+* Translates different protocols
+* Routes data between networks
+* Performs security filtering (sometimes)
+* Often provides access to the internet
+
+Examples of Gateway
+1. Home Router – Your default gateway IP is usually 192.168.1.1
+2. Cloud API Gateway – Controls access to backend APIs
+3. Enterprise Gateway – Connects office network to external networks
+
+***************************************************************************************************************************
