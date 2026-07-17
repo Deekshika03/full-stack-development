@@ -13,6 +13,7 @@ export default function App() {
   const [charLimit, setCharLimit] = useState(PLATFORMS["Twitter"]);
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
+  const [savedPosts, setSavedPosts] = useState(() => JSON.parse(localStorage.getItem("savedPosts") || "[]"));
   useEffect(() => {
     setCharLimit(PLATFORMS[platform]);
   }, [platform]);
@@ -29,6 +30,14 @@ export default function App() {
       setIsError(false);
     }
   }, [post, platform]);
+  function handlePost() {
+    const newPost = { platform, post, timestamp: new Date().toLocaleString() };
+    const updated = [newPost, ...savedPosts];
+    setSavedPosts(updated);
+    localStorage.setItem("savedPosts", JSON.stringify(updated));
+    handleClear();
+  }
+
   function handleClear() {
     setPost("");
     setMessage("");
@@ -46,8 +55,20 @@ export default function App() {
         message={message}
         isError={isError}
         onClear={handleClear}
+        onPost={handlePost}
         platforms={Object.keys(PLATFORMS)}
       />
+      {savedPosts.length > 0 && (
+        <div className="saved-posts">
+          <h2>Saved Posts</h2>
+          {savedPosts.map((p, i) => (
+            <div key={i} className="saved-post">
+              <small>{p.platform} — {p.timestamp}</small>
+              <p>{p.post}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
