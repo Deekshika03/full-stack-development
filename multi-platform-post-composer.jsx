@@ -4,7 +4,7 @@ import "./App.css";
 
 const PLATFORMS = {
   Twitter: 280,
-  Instagram: 2200,
+  Instagram: 200,
   LinkedIn: 3000,
 };
 export default function App() {
@@ -14,6 +14,8 @@ export default function App() {
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
   const [savedPosts, setSavedPosts] = useState(() => JSON.parse(localStorage.getItem("savedPosts") || "[]"));
+  const [editingIndex, setEditingIndex] = useState(null);
+  const [editText, setEditText] = useState("");
   useEffect(() => {
     setCharLimit(PLATFORMS[platform]);
   }, [platform]);
@@ -38,6 +40,24 @@ export default function App() {
     handleClear();
   }
 
+  function handleDelete(index) {
+    const updated = savedPosts.filter((_, i) => i !== index);
+    setSavedPosts(updated);
+    localStorage.setItem("savedPosts", JSON.stringify(updated));
+  }
+  function handleEdit(index) {
+    setEditingIndex(index);
+    setEditText(savedPosts[index].post);
+  }
+  function handleUpdate(index) {
+    const updated = savedPosts.map((p, i) =>
+      i === index ? { ...p, post: editText, timestamp: new Date().toLocaleString() } : p
+    );
+    setSavedPosts(updated);
+    localStorage.setItem("savedPosts", JSON.stringify(updated));
+    setEditingIndex(null);
+    setEditText("");
+  }
   function handleClear() {
     setPost("");
     setMessage("");
@@ -64,7 +84,19 @@ export default function App() {
           {savedPosts.map((p, i) => (
             <div key={i} className="saved-post">
               <small>{p.platform} — {p.timestamp}</small>
-              <p>{p.post}</p>
+              {editingIndex === i ? (
+                <>
+                  <textarea value={editText} onChange={(e) => setEditText(e.target.value)} />
+                  <button className="btn-edit" onClick={() => handleUpdate(i)}>Save</button>
+                  <button className="btn-delete" onClick={() => setEditingIndex(null)}>Cancel</button>
+                </>
+              ) : (
+                <>
+                  <p>{p.post}</p>
+                  <button className="btn-edit" onClick={() => handleEdit(i)}>Edit</button>
+                  <button className="btn-delete" onClick={() => handleDelete(i)}>Delete</button>
+                </>
+              )}
             </div>
           ))}
         </div>
