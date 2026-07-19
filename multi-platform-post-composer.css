@@ -108,3 +108,44 @@ button {
 .btn-clear:hover {
   background: #ddd;
 }
+
+.saved-posts {
+  margin-top: 24px;
+}
+.saved-post {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+.saved-post small {
+  color: #888;
+  font-size: 0.8rem;
+}
+.saved-post p {
+  margin: 6px 0;
+}
+.btn-edit, .btn-delete {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin-right: 6px;
+}
+.saved-post textarea {
+  width: 100%;
+  min-height: 100px;
+  margin: 8px 0;
+  font-size: 0.95rem;
+  padding: 8px;
+}
+.btn-edit {
+  background: #94d3fa;
+  color: #fff;
+}
+.btn-delete {
+  background: #5f6365;
+  color: #fff;
+}
